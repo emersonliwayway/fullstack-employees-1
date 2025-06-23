@@ -1,6 +1,15 @@
 /** @returns the employee created according to the provided details */
 export async function createEmployee({ name, birthday, salary }) {
   // TODO
+  const sql = `
+  INSERT INTO employees (column1, column2, column3)
+  VALUES ($1, $2, $3)
+  RETURNING *`;
+
+  const {
+    rows: [newEmployee],
+  } = await db.query(sql, [name, birthday, salary]);
+  return newEmployee;
 }
 
 // === Part 2 ===
