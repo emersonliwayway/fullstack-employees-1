@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS fullstack_employees;
+DROP TABLE IF EXISTS employees;
 CREATE DATABASE fullstack_employees;
 
 -- create table (schema)
